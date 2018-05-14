@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Almacenes.Presentacion.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:LoginStatus ID="lgsEstadoAutenticacion" runat="server" 
+                LogoutPageUrl="~Login.aspx" LogoutAction="Redirect" LogoutText="Salir" OnLoggingOut="lgsEstadoAutenticacion_LoggingOut"/>
+            <br/>
+            <asp:LoginName ID="lgnNombreUsuario" runat="server" />
+            <br/>
+            <hr/>
+            <asp:Menu ID="menuPrincipal" runat="server" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem Text="[Inicio]" NavigateUrl="~Inicio.aspx" />
+                    <asp:MenuItem Text="[Productos]" NavigateUrl="~Productos.aspx" />
+                    <asp:MenuItem Text="[Proveedores]" NavigateUrl="~Proveedores.aspx" />
+                    <asp:MenuItem Text="[Ordenes de Compra]" NavigateUrl="~OrdenDeCompra.aspx" />
+                    <asp:MenuItem Text="[Clientes]" NavigateUrl="~Clientes.aspx" />
+                    <asp:MenuItem Text="[Ventas]" NavigateUrl="~Ventas.aspx" />
+                    <asp:MenuItem Text="[Almacenes]" NavigateUrl="~Almacenes.aspx" />
+
+                </Items>
+                
+            </asp:Menu>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
