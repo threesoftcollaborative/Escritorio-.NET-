@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SGAModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SGA_ALMACEN">
+    <Key>
+      <PropertyRef Name="ID_ALMACEN" />
+    </Key>
+    <Property Name="ID_ALMACEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="50" />
+    <Property Name="ID_CATEGORIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar2" MaxLength="50" />
+    <Property Name="ID_COMUNA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SGA_BOLETA">
+    <Key>
+      <PropertyRef Name="ID_BOLETA" />
+    </Key>
+    <Property Name="ID_BOLETA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_BOLETA" Type="date" />
+    <Property Name="TOTAL" Type="number" Precision="38" Scale="0" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_USUARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="number" Precision="38" Scale="0" />
+    <Property Name="ID_ALMACEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_CATEGORIA">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="50" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SGA_CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RUT" Type="varchar2" MaxLength="10" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="50" />
+    <Property Name="APELLIDO" Type="varchar2" MaxLength="50" />
+    <Property Name="TELEFONO" Type="number" Precision="38" Scale="0" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="50" />
+    <Property Name="FECHA_NACIMIENTO" Type="date" />
+    <Property Name="DIRECCION" Type="varchar2" MaxLength="50" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_ALMACEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_COMUNA" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_COMUNA">
+    <Key>
+      <PropertyRef Name="ID_COMUNA" />
+    </Key>
+    <Property Name="ID_COMUNA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="COMUNA" Type="varchar2" MaxLength="50" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SGA_DETALLE_BOLETA">
+    <Key>
+      <PropertyRef Name="ID_DETALLE_BOLETA" />
+    </Key>
+    <Property Name="ID_DETALLE_BOLETA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_BOLETA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="COD_BARRA" Type="varchar2" MaxLength="100" />
+    <Property Name="PRECIO_VENTA" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SGA_DETALLE_ORDEN_COMPRA">
+    <Key>
+      <PropertyRef Name="ID_DETALLE_ORDEN_COMPRA" />
+    </Key>
+    <Property Name="ID_DETALLE_ORDEN_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_ORDEN_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CANTIDAD" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PRECIO_COMPRA" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SGA_DETALLE_PRODUCTO">
+    <Key>
+      <PropertyRef Name="COD_BARRA" />
+    </Key>
+    <Property Name="COD_BARRA" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="number" Precision="38" Scale="0" />
+    <Property Name="FECHA_CADUCIDAD" Type="date" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SGA_MARCA">
+    <Key>
+      <PropertyRef Name="ID_MARCA" />
+    </Key>
+    <Property Name="ID_MARCA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MARCA" Type="varchar2" MaxLength="50" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_CATEGORIA" Type="number" Precision="38" Scale="0" />
+    <Property Name="ID_PROVEEDOR" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SGA_MENU">
+    <Key>
+      <PropertyRef Name="ID_MENU" />
+    </Key>
+    <Property Name="ID_MENU" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="50" />
+    <Property Name="PADRE_MENU" Type="number" Precision="38" Scale="0" />
+    <Property Name="DESTINO" Type="number" Precision="38" Scale="0" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SGA_ORDEN_COMPRA">
+    <Key>
+      <PropertyRef Name="ID_ORDEN_COMPRA" />
+    </Key>
+    <Property Name="ID_ORDEN_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_ORDEN_COMPRA" Type="date" />
+    <Property Name="FECHA_RECEPCION" Type="date" />
+    <Property Name="TOTAL" Type="number" Precision="38" Scale="0" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_USUARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_PROVEEDOR" Type="number" Precision="38" Scale="0" />
+    <Property Name="ID_ALMACEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_PERFIL">
+    <Key>
+      <PropertyRef Name="ID_PERFIL" />
+    </Key>
+    <Property Name="ID_PERFIL" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="50" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_MENU" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="50" />
+    <Property Name="PRECIO_COMPRA" Type="number" Precision="38" Scale="0" />
+    <Property Name="PRECIO_VENTA" Type="number" Precision="38" Scale="0" />
+    <Property Name="STOCK" Type="number" Precision="38" Scale="0" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_MARCA" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_PROVEEDOR">
+    <Key>
+      <PropertyRef Name="ID_PROVEEDOR" />
+    </Key>
+    <Property Name="ID_PROVEEDOR" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="50" />
+    <Property Name="RUT" Type="varchar2" MaxLength="10" />
+    <Property Name="FONO" Type="number" Precision="38" Scale="0" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="50" />
+    <Property Name="DIRECCION" Type="varchar2" MaxLength="50" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_COMUNA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_ALMACEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar2" MaxLength="50" />
+    <Property Name="PASS" Type="varchar2" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="50" />
+    <Property Name="ESTADO" Type="char" MaxLength="1" />
+    <Property Name="ID_PERFIL" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_ALMACEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <Association Name="SGA_ALM_SGA_ORD_COMP_FK">
+    <End Role="SGA_ALMACEN" Type="Self.SGA_ALMACEN" Multiplicity="1" />
+    <End Role="SGA_ORDEN_COMPRA" Type="Self.SGA_ORDEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ALMACEN">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Principal>
+      <Dependent Role="SGA_ORDEN_COMPRA">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_ALMACEN_SGA_BOLETA_FK">
+    <End Role="SGA_ALMACEN" Type="Self.SGA_ALMACEN" Multiplicity="1" />
+    <End Role="SGA_BOLETA" Type="Self.SGA_BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ALMACEN">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Principal>
+      <Dependent Role="SGA_BOLETA">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_ALMACEN_SGA_CLIENTE_FK">
+    <End Role="SGA_ALMACEN" Type="Self.SGA_ALMACEN" Multiplicity="1" />
+    <End Role="SGA_CLIENTE" Type="Self.SGA_CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ALMACEN">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Principal>
+      <Dependent Role="SGA_CLIENTE">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_ALMACEN_SGA_PROVEEDOR_FK">
+    <End Role="SGA_ALMACEN" Type="Self.SGA_ALMACEN" Multiplicity="1" />
+    <End Role="SGA_PROVEEDOR" Type="Self.SGA_PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ALMACEN">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Principal>
+      <Dependent Role="SGA_PROVEEDOR">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_ALMACEN_SGA_USUARIO_FK">
+    <End Role="SGA_ALMACEN" Type="Self.SGA_ALMACEN" Multiplicity="1" />
+    <End Role="SGA_USUARIO" Type="Self.SGA_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ALMACEN">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Principal>
+      <Dependent Role="SGA_USUARIO">
+        <PropertyRef Name="ID_ALMACEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_BOLETA_SGA_DET_BOL_FK">
+    <End Role="SGA_BOLETA" Type="Self.SGA_BOLETA" Multiplicity="1" />
+    <End Role="SGA_DETALLE_BOLETA" Type="Self.SGA_DETALLE_BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_BOLETA">
+        <PropertyRef Name="ID_BOLETA" />
+      </Principal>
+      <Dependent Role="SGA_DETALLE_BOLETA">
+        <PropertyRef Name="ID_BOLETA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_CATEGORIA_SGA_ALMACEN_FK">
+    <End Role="SGA_CATEGORIA" Type="Self.SGA_CATEGORIA" Multiplicity="1" />
+    <End Role="SGA_ALMACEN" Type="Self.SGA_ALMACEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_CATEGORIA">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Principal>
+      <Dependent Role="SGA_ALMACEN">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_CATEGORIA_SGA_MARCA_FK">
+    <End Role="SGA_CATEGORIA" Type="Self.SGA_CATEGORIA" Multiplicity="0..1" />
+    <End Role="SGA_MARCA" Type="Self.SGA_MARCA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_CATEGORIA">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Principal>
+      <Dependent Role="SGA_MARCA">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_CLIENTE_SGA_BOLETA_FK">
+    <End Role="SGA_CLIENTE" Type="Self.SGA_CLIENTE" Multiplicity="0..1" />
+    <End Role="SGA_BOLETA" Type="Self.SGA_BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="SGA_BOLETA">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_COMUNA_FK_SGA_ALMACEN_FK">
+    <End Role="SGA_COMUNA" Type="Self.SGA_COMUNA" Multiplicity="1" />
+    <End Role="SGA_ALMACEN" Type="Self.SGA_ALMACEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_COMUNA">
+        <PropertyRef Name="ID_COMUNA" />
+      </Principal>
+      <Dependent Role="SGA_ALMACEN">
+        <PropertyRef Name="ID_COMUNA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_COMUNA_SGA_PROVEEDOR_FK">
+    <End Role="SGA_COMUNA" Type="Self.SGA_COMUNA" Multiplicity="1" />
+    <End Role="SGA_PROVEEDOR" Type="Self.SGA_PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_COMUNA">
+        <PropertyRef Name="ID_COMUNA" />
+      </Principal>
+      <Dependent Role="SGA_PROVEEDOR">
+        <PropertyRef Name="ID_COMUNA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_DET_PROD_SGA_DET_BOL_FK">
+    <End Role="SGA_DETALLE_PRODUCTO" Type="Self.SGA_DETALLE_PRODUCTO" Multiplicity="0..1" />
+    <End Role="SGA_DETALLE_BOLETA" Type="Self.SGA_DETALLE_BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_DETALLE_PRODUCTO">
+        <PropertyRef Name="COD_BARRA" />
+      </Principal>
+      <Dependent Role="SGA_DETALLE_BOLETA">
+        <PropertyRef Name="COD_BARRA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_MARCA_SGA_PRODUCTO_FK">
+    <End Role="SGA_MARCA" Type="Self.SGA_MARCA" Multiplicity="1" />
+    <End Role="SGA_PRODUCTO" Type="Self.SGA_PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_MARCA">
+        <PropertyRef Name="ID_MARCA" />
+      </Principal>
+      <Dependent Role="SGA_PRODUCTO">
+        <PropertyRef Name="ID_MARCA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_MENU_SGA_PERFIL_FK">
+    <End Role="SGA_MENU" Type="Self.SGA_MENU" Multiplicity="1" />
+    <End Role="SGA_PERFIL" Type="Self.SGA_PERFIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_MENU">
+        <PropertyRef Name="ID_MENU" />
+      </Principal>
+      <Dependent Role="SGA_PERFIL">
+        <PropertyRef Name="ID_MENU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_O_COMP_SGA_DET_O_COMP_FK">
+    <End Role="SGA_ORDEN_COMPRA" Type="Self.SGA_ORDEN_COMPRA" Multiplicity="1" />
+    <End Role="SGA_DETALLE_ORDEN_COMPRA" Type="Self.SGA_DETALLE_ORDEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ORDEN_COMPRA">
+        <PropertyRef Name="ID_ORDEN_COMPRA" />
+      </Principal>
+      <Dependent Role="SGA_DETALLE_ORDEN_COMPRA">
+        <PropertyRef Name="ID_ORDEN_COMPRA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_PERFIL_SGA_USUARIO_FK">
+    <End Role="SGA_PERFIL" Type="Self.SGA_PERFIL" Multiplicity="1" />
+    <End Role="SGA_USUARIO" Type="Self.SGA_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_PERFIL">
+        <PropertyRef Name="ID_PERFIL" />
+      </Principal>
+      <Dependent Role="SGA_USUARIO">
+        <PropertyRef Name="ID_PERFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_PROD_SGA_DET_O_COMP_FK">
+    <End Role="SGA_PRODUCTO" Type="Self.SGA_PRODUCTO" Multiplicity="1" />
+    <End Role="SGA_DETALLE_ORDEN_COMPRA" Type="Self.SGA_DETALLE_ORDEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="SGA_DETALLE_ORDEN_COMPRA">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_PROD_SGA_DET_PROD_FK">
+    <End Role="SGA_PRODUCTO" Type="Self.SGA_PRODUCTO" Multiplicity="0..1" />
+    <End Role="SGA_DETALLE_PRODUCTO" Type="Self.SGA_DETALLE_PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="SGA_DETALLE_PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_PROVE_SGA_ORD_COMP_FK">
+    <End Role="SGA_PROVEEDOR" Type="Self.SGA_PROVEEDOR" Multiplicity="0..1" />
+    <End Role="SGA_ORDEN_COMPRA" Type="Self.SGA_ORDEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_PROVEEDOR">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Principal>
+      <Dependent Role="SGA_ORDEN_COMPRA">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_PROVEEDOR_SGA_MARCA_FK">
+    <End Role="SGA_PROVEEDOR" Type="Self.SGA_PROVEEDOR" Multiplicity="0..1" />
+    <End Role="SGA_MARCA" Type="Self.SGA_MARCA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_PROVEEDOR">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Principal>
+      <Dependent Role="SGA_MARCA">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_USU_SGA_ORD_COMP_FK">
+    <End Role="SGA_USUARIO" Type="Self.SGA_USUARIO" Multiplicity="1" />
+    <End Role="SGA_ORDEN_COMPRA" Type="Self.SGA_ORDEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="SGA_ORDEN_COMPRA">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SGA_USUARIO_SGA_BOLETA_FK">
+    <End Role="SGA_USUARIO" Type="Self.SGA_USUARIO" Multiplicity="1" />
+    <End Role="SGA_BOLETA" Type="Self.SGA_BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="SGA_BOLETA">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CUSTOM_AUTH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="THREESOFT" ReturnType="pl/sql boolean">
+    <Parameter Name="P_USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="P_PASSWORD" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="CUSTOM_HASH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="THREESOFT" ReturnType="varchar2">
+    <Parameter Name="P_USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="P_PASSWORD" Type="varchar2" Mode="In" />
+  </Function>
+  <EntityContainer Name="SGAModelStoreContainer">
+    <EntitySet Name="SGA_ALMACEN" EntityType="Self.SGA_ALMACEN" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_BOLETA" EntityType="Self.SGA_BOLETA" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_CATEGORIA" EntityType="Self.SGA_CATEGORIA" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_CLIENTE" EntityType="Self.SGA_CLIENTE" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_COMUNA" EntityType="Self.SGA_COMUNA" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_DETALLE_BOLETA" EntityType="Self.SGA_DETALLE_BOLETA" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_DETALLE_ORDEN_COMPRA" EntityType="Self.SGA_DETALLE_ORDEN_COMPRA" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_DETALLE_PRODUCTO" EntityType="Self.SGA_DETALLE_PRODUCTO" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_MARCA" EntityType="Self.SGA_MARCA" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_MENU" EntityType="Self.SGA_MENU" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_ORDEN_COMPRA" EntityType="Self.SGA_ORDEN_COMPRA" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_PERFIL" EntityType="Self.SGA_PERFIL" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_PRODUCTO" EntityType="Self.SGA_PRODUCTO" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_PROVEEDOR" EntityType="Self.SGA_PROVEEDOR" Schema="THREESOFT" store:Type="Tables" />
+    <EntitySet Name="SGA_USUARIO" EntityType="Self.SGA_USUARIO" Schema="THREESOFT" store:Type="Tables" />
+    <AssociationSet Name="SGA_ALM_SGA_ORD_COMP_FK" Association="Self.SGA_ALM_SGA_ORD_COMP_FK">
+      <End Role="SGA_ALMACEN" EntitySet="SGA_ALMACEN" />
+      <End Role="SGA_ORDEN_COMPRA" EntitySet="SGA_ORDEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_ALMACEN_SGA_BOLETA_FK" Association="Self.SGA_ALMACEN_SGA_BOLETA_FK">
+      <End Role="SGA_ALMACEN" EntitySet="SGA_ALMACEN" />
+      <End Role="SGA_BOLETA" EntitySet="SGA_BOLETA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_ALMACEN_SGA_CLIENTE_FK" Association="Self.SGA_ALMACEN_SGA_CLIENTE_FK">
+      <End Role="SGA_ALMACEN" EntitySet="SGA_ALMACEN" />
+      <End Role="SGA_CLIENTE" EntitySet="SGA_CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_ALMACEN_SGA_PROVEEDOR_FK" Association="Self.SGA_ALMACEN_SGA_PROVEEDOR_FK">
+      <End Role="SGA_ALMACEN" EntitySet="SGA_ALMACEN" />
+      <End Role="SGA_PROVEEDOR" EntitySet="SGA_PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_ALMACEN_SGA_USUARIO_FK" Association="Self.SGA_ALMACEN_SGA_USUARIO_FK">
+      <End Role="SGA_ALMACEN" EntitySet="SGA_ALMACEN" />
+      <End Role="SGA_USUARIO" EntitySet="SGA_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_BOLETA_SGA_DET_BOL_FK" Association="Self.SGA_BOLETA_SGA_DET_BOL_FK">
+      <End Role="SGA_BOLETA" EntitySet="SGA_BOLETA" />
+      <End Role="SGA_DETALLE_BOLETA" EntitySet="SGA_DETALLE_BOLETA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_CATEGORIA_SGA_ALMACEN_FK" Association="Self.SGA_CATEGORIA_SGA_ALMACEN_FK">
+      <End Role="SGA_CATEGORIA" EntitySet="SGA_CATEGORIA" />
+      <End Role="SGA_ALMACEN" EntitySet="SGA_ALMACEN" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_CATEGORIA_SGA_MARCA_FK" Association="Self.SGA_CATEGORIA_SGA_MARCA_FK">
+      <End Role="SGA_CATEGORIA" EntitySet="SGA_CATEGORIA" />
+      <End Role="SGA_MARCA" EntitySet="SGA_MARCA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_CLIENTE_SGA_BOLETA_FK" Association="Self.SGA_CLIENTE_SGA_BOLETA_FK">
+      <End Role="SGA_CLIENTE" EntitySet="SGA_CLIENTE" />
+      <End Role="SGA_BOLETA" EntitySet="SGA_BOLETA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_COMUNA_FK_SGA_ALMACEN_FK" Association="Self.SGA_COMUNA_FK_SGA_ALMACEN_FK">
+      <End Role="SGA_COMUNA" EntitySet="SGA_COMUNA" />
+      <End Role="SGA_ALMACEN" EntitySet="SGA_ALMACEN" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_COMUNA_SGA_PROVEEDOR_FK" Association="Self.SGA_COMUNA_SGA_PROVEEDOR_FK">
+      <End Role="SGA_COMUNA" EntitySet="SGA_COMUNA" />
+      <End Role="SGA_PROVEEDOR" EntitySet="SGA_PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_DET_PROD_SGA_DET_BOL_FK" Association="Self.SGA_DET_PROD_SGA_DET_BOL_FK">
+      <End Role="SGA_DETALLE_PRODUCTO" EntitySet="SGA_DETALLE_PRODUCTO" />
+      <End Role="SGA_DETALLE_BOLETA" EntitySet="SGA_DETALLE_BOLETA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_MARCA_SGA_PRODUCTO_FK" Association="Self.SGA_MARCA_SGA_PRODUCTO_FK">
+      <End Role="SGA_MARCA" EntitySet="SGA_MARCA" />
+      <End Role="SGA_PRODUCTO" EntitySet="SGA_PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_MENU_SGA_PERFIL_FK" Association="Self.SGA_MENU_SGA_PERFIL_FK">
+      <End Role="SGA_MENU" EntitySet="SGA_MENU" />
+      <End Role="SGA_PERFIL" EntitySet="SGA_PERFIL" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_O_COMP_SGA_DET_O_COMP_FK" Association="Self.SGA_O_COMP_SGA_DET_O_COMP_FK">
+      <End Role="SGA_ORDEN_COMPRA" EntitySet="SGA_ORDEN_COMPRA" />
+      <End Role="SGA_DETALLE_ORDEN_COMPRA" EntitySet="SGA_DETALLE_ORDEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_PERFIL_SGA_USUARIO_FK" Association="Self.SGA_PERFIL_SGA_USUARIO_FK">
+      <End Role="SGA_PERFIL" EntitySet="SGA_PERFIL" />
+      <End Role="SGA_USUARIO" EntitySet="SGA_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_PROD_SGA_DET_O_COMP_FK" Association="Self.SGA_PROD_SGA_DET_O_COMP_FK">
+      <End Role="SGA_PRODUCTO" EntitySet="SGA_PRODUCTO" />
+      <End Role="SGA_DETALLE_ORDEN_COMPRA" EntitySet="SGA_DETALLE_ORDEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_PROD_SGA_DET_PROD_FK" Association="Self.SGA_PROD_SGA_DET_PROD_FK">
+      <End Role="SGA_PRODUCTO" EntitySet="SGA_PRODUCTO" />
+      <End Role="SGA_DETALLE_PRODUCTO" EntitySet="SGA_DETALLE_PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_PROVE_SGA_ORD_COMP_FK" Association="Self.SGA_PROVE_SGA_ORD_COMP_FK">
+      <End Role="SGA_PROVEEDOR" EntitySet="SGA_PROVEEDOR" />
+      <End Role="SGA_ORDEN_COMPRA" EntitySet="SGA_ORDEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_PROVEEDOR_SGA_MARCA_FK" Association="Self.SGA_PROVEEDOR_SGA_MARCA_FK">
+      <End Role="SGA_PROVEEDOR" EntitySet="SGA_PROVEEDOR" />
+      <End Role="SGA_MARCA" EntitySet="SGA_MARCA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_USU_SGA_ORD_COMP_FK" Association="Self.SGA_USU_SGA_ORD_COMP_FK">
+      <End Role="SGA_USUARIO" EntitySet="SGA_USUARIO" />
+      <End Role="SGA_ORDEN_COMPRA" EntitySet="SGA_ORDEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="SGA_USUARIO_SGA_BOLETA_FK" Association="Self.SGA_USUARIO_SGA_BOLETA_FK">
+      <End Role="SGA_USUARIO" EntitySet="SGA_USUARIO" />
+      <End Role="SGA_BOLETA" EntitySet="SGA_BOLETA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SGAModelStoreContainer" CdmEntityContainer="DefaultConnection">
+    <EntitySetMapping Name="SGA_ALMACEN">
+      <EntityTypeMapping TypeName="SGAModel.SGA_ALMACEN">
+        <MappingFragment StoreEntitySet="SGA_ALMACEN">
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="ID_COMUNA" ColumnName="ID_COMUNA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_BOLETA">
+      <EntityTypeMapping TypeName="SGAModel.SGA_BOLETA">
+        <MappingFragment StoreEntitySet="SGA_BOLETA">
+          <ScalarProperty Name="ID_BOLETA" ColumnName="ID_BOLETA" />
+          <ScalarProperty Name="FECHA_BOLETA" ColumnName="FECHA_BOLETA" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_CATEGORIA">
+      <EntityTypeMapping TypeName="SGAModel.SGA_CATEGORIA">
+        <MappingFragment StoreEntitySet="SGA_CATEGORIA">
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_CLIENTE">
+      <EntityTypeMapping TypeName="SGAModel.SGA_CLIENTE">
+        <MappingFragment StoreEntitySet="SGA_CLIENTE">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+          <ScalarProperty Name="ID_COMUNA" ColumnName="ID_COMUNA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_COMUNA">
+      <EntityTypeMapping TypeName="SGAModel.SGA_COMUNA">
+        <MappingFragment StoreEntitySet="SGA_COMUNA">
+          <ScalarProperty Name="ID_COMUNA" ColumnName="ID_COMUNA" />
+          <ScalarProperty Name="COMUNA" ColumnName="COMUNA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_DETALLE_BOLETA">
+      <EntityTypeMapping TypeName="SGAModel.SGA_DETALLE_BOLETA">
+        <MappingFragment StoreEntitySet="SGA_DETALLE_BOLETA">
+          <ScalarProperty Name="ID_DETALLE_BOLETA" ColumnName="ID_DETALLE_BOLETA" />
+          <ScalarProperty Name="ID_BOLETA" ColumnName="ID_BOLETA" />
+          <ScalarProperty Name="COD_BARRA" ColumnName="COD_BARRA" />
+          <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_DETALLE_ORDEN_COMPRA">
+      <EntityTypeMapping TypeName="SGAModel.SGA_DETALLE_ORDEN_COMPRA">
+        <MappingFragment StoreEntitySet="SGA_DETALLE_ORDEN_COMPRA">
+          <ScalarProperty Name="ID_DETALLE_ORDEN_COMPRA" ColumnName="ID_DETALLE_ORDEN_COMPRA" />
+          <ScalarProperty Name="ID_ORDEN_COMPRA" ColumnName="ID_ORDEN_COMPRA" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_DETALLE_PRODUCTO">
+      <EntityTypeMapping TypeName="SGAModel.SGA_DETALLE_PRODUCTO">
+        <MappingFragment StoreEntitySet="SGA_DETALLE_PRODUCTO">
+          <ScalarProperty Name="COD_BARRA" ColumnName="COD_BARRA" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="FECHA_CADUCIDAD" ColumnName="FECHA_CADUCIDAD" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_MARCA">
+      <EntityTypeMapping TypeName="SGAModel.SGA_MARCA">
+        <MappingFragment StoreEntitySet="SGA_MARCA">
+          <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+          <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_MENU">
+      <EntityTypeMapping TypeName="SGAModel.SGA_MENU">
+        <MappingFragment StoreEntitySet="SGA_MENU">
+          <ScalarProperty Name="ID_MENU" ColumnName="ID_MENU" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PADRE_MENU" ColumnName="PADRE_MENU" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_ORDEN_COMPRA">
+      <EntityTypeMapping TypeName="SGAModel.SGA_ORDEN_COMPRA">
+        <MappingFragment StoreEntitySet="SGA_ORDEN_COMPRA">
+          <ScalarProperty Name="ID_ORDEN_COMPRA" ColumnName="ID_ORDEN_COMPRA" />
+          <ScalarProperty Name="FECHA_ORDEN_COMPRA" ColumnName="FECHA_ORDEN_COMPRA" />
+          <ScalarProperty Name="FECHA_RECEPCION" ColumnName="FECHA_RECEPCION" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_PERFIL">
+      <EntityTypeMapping TypeName="SGAModel.SGA_PERFIL">
+        <MappingFragment StoreEntitySet="SGA_PERFIL">
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_MENU" ColumnName="ID_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_PRODUCTO">
+      <EntityTypeMapping TypeName="SGAModel.SGA_PRODUCTO">
+        <MappingFragment StoreEntitySet="SGA_PRODUCTO">
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
+          <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_PROVEEDOR">
+      <EntityTypeMapping TypeName="SGAModel.SGA_PROVEEDOR">
+        <MappingFragment StoreEntitySet="SGA_PROVEEDOR">
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="FONO" ColumnName="FONO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_COMUNA" ColumnName="ID_COMUNA" />
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGA_USUARIO">
+      <EntityTypeMapping TypeName="SGAModel.SGA_USUARIO">
+        <MappingFragment StoreEntitySet="SGA_USUARIO">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+          <ScalarProperty Name="ID_ALMACEN" ColumnName="ID_ALMACEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

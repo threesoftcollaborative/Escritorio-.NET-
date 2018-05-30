@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALC", "ClassLibrary1\DALC.csproj", "{2E6C7871-B8D4-4AE1-AE63-38E4E5AF5BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{132743AE-3DB8-4B28-8F62-C7CEE636314B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSGA", "AppSGA\AppSGA.csproj", "{B3897361-4B27-4987-8572-AD0D415E31C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E6C7871-B8D4-4AE1-AE63-38E4E5AF5BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E6C7871-B8D4-4AE1-AE63-38E4E5AF5BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E6C7871-B8D4-4AE1-AE63-38E4E5AF5BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E6C7871-B8D4-4AE1-AE63-38E4E5AF5BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132743AE-3DB8-4B28-8F62-C7CEE636314B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132743AE-3DB8-4B28-8F62-C7CEE636314B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132743AE-3DB8-4B28-8F62-C7CEE636314B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132743AE-3DB8-4B28-8F62-C7CEE636314B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3897361-4B27-4987-8572-AD0D415E31C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3897361-4B27-4987-8572-AD0D415E31C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3897361-4B27-4987-8572-AD0D415E31C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3897361-4B27-4987-8572-AD0D415E31C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

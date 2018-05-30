@@ -1,0 +1,10 @@
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\bin\Debug\DALC.dll.config
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\bin\Debug\DALC.dll
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\bin\Debug\DALC.pdb
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\bin\Debug\EntityFramework.dll
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\bin\Debug\EntityFramework.xml
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\obj\Debug\DALC.csprojResolveAssemblyReference.cache
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\obj\Debug\DALC.dll
+C:\Users\FQF\Desktop\ProyectoSGA\ClassLibrary1\obj\Debug\DALC.pdb

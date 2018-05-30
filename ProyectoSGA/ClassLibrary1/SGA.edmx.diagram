@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e90541348fe340f8b2063474c6a032b8" Name="Diagram1">
+        <EntityTypeShape EntityType="SGAModel.SGA_ALMACEN" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_BOLETA" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_CATEGORIA" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_CLIENTE" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_COMUNA" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_DETALLE_BOLETA" Width="1.5" PointX="12.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_DETALLE_ORDEN_COMPRA" Width="1.5" PointX="10.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_DETALLE_PRODUCTO" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_MARCA" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_MENU" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_ORDEN_COMPRA" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_PERFIL" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_PRODUCTO" Width="1.5" PointX="12.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_PROVEEDOR" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGAModel.SGA_USUARIO" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="SGAModel.SGA_ALM_SGA_ORD_COMP_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_ALMACEN_SGA_BOLETA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_ALMACEN_SGA_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_ALMACEN_SGA_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_ALMACEN_SGA_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_CATEGORIA_SGA_ALMACEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_COMUNA_FK_SGA_ALMACEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_BOLETA_SGA_DET_BOL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_CLIENTE_SGA_BOLETA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_USUARIO_SGA_BOLETA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_CATEGORIA_SGA_MARCA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_COMUNA_SGA_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_DET_PROD_SGA_DET_BOL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_O_COMP_SGA_DET_O_COMP_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_PROD_SGA_DET_O_COMP_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_PROD_SGA_DET_PROD_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_MARCA_SGA_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_PROVEEDOR_SGA_MARCA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_MENU_SGA_PERFIL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_PROVE_SGA_ORD_COMP_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_USU_SGA_ORD_COMP_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SGAModel.SGA_PERFIL_SGA_USUARIO_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

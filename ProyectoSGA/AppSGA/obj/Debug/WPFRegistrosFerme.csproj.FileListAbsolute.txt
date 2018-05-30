@@ -1,0 +1,4 @@
+C:\Users\Usuario\Desktop\registro ferme ultimo bea 1.1\RegistroFerme\WPFRegistrosFerme\bin\WPFRegistrosFerme.dll
+C:\Users\Usuario\Desktop\registro ferme ultimo bea 1.1\RegistroFerme\WPFRegistrosFerme\bin\WPFRegistrosFerme.pdb
+C:\Users\Usuario\Desktop\registro ferme ultimo bea 1.1\RegistroFerme\WPFRegistrosFerme\obj\Debug\WPFRegistrosFerme.dll
+C:\Users\Usuario\Desktop\registro ferme ultimo bea 1.1\RegistroFerme\WPFRegistrosFerme\obj\Debug\WPFRegistrosFerme.pdb
